@@ -64,13 +64,26 @@
 	</select>
 	
 	<!-- 선택한 공지사항 조회 -->
-	<select id="noticeBoardDetail" resultType="noticeboardVo">
-		select * from noticeboard where NB_ID = 1
+	<select id="noticeBoardDetail" resultType="noticeboardVo" parameterType="int">
+		select * from noticeboard where nb_id = #{nb_id}
 	</select>
 	
+	<!-- 공지사항 입력 -->
+	<select id="noticeBoardWrite">
+		insert into noticeboard (nb_id, nb_content, nb_title, nb_date) 
+		values (#{nb_id}, #{nb_content}, #{nb_title}, #{nb_date})
+	</select>
+	
+	<!-- 공지사항 삭제 -->
+	<delete id="signupDelete" parameterType="int">
+		delete from noticeboard where nb_id = #{nb_id}
+	</delete>
+	
+	<!-- 공지사항수정 -->
+
 
 </mapper>
-
+s
 
 
 
