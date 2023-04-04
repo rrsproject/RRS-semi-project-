@@ -18,21 +18,21 @@
 	<typeAliases>
 		<typeAlias type="gos.vo.BookmarkVO" alias="bookmarkVo"/>
 		<typeAlias type="gos.vo.CategoryVO" alias="categoryVo"/>
-		<typeAlias type="gos.vo.CmtReportVO" alias="cm"/>
-		<typeAlias type="gos.vo.CmtVO" alias=""/>
-		<typeAlias type="gos.vo.IqrVO" alias=""/>
-		<typeAlias type="gos.vo.MemberVO" alias=""/>
-		<typeAlias type="gos.vo.MenuVO" alias=""/>
-		<typeAlias type="gos.vo.NoticeBoardVO" alias=""/>
-		<typeAlias type="gos.vo.ReservationVO" alias=""/>
-		<typeAlias type="gos.vo.RestautantVO" alias=""/>
-		<typeAlias type="gos.vo.ReviewVO" alias=""/>
-		<typeAlias type="gos.vo.RsMenuVO" alias=""/>
-		<typeAlias type="gos.vo.RstcmtVO" alias=""/>
-		<typeAlias type="gos.vo.RsttagVO" alias=""/>
-		<typeAlias type="gos.vo.RvrepotVO" alias=""/>
-		<typeAlias type="gos.vo.TableTypeVO" alias=""/>
-		<typeAlias type="gos.vo.TagVO" alias=""/>
+		<typeAlias type="gos.vo.CmtReportVO" alias="cmtreportVo"/>
+		<typeAlias type="gos.vo.CmtVO" alias="cmtVo"/>
+		<typeAlias type="gos.vo.IqrVO" alias="iqrVo"/>
+		<typeAlias type="gos.vo.MemberVO" alias="memberVo"/>
+		<typeAlias type="gos.vo.MenuVO" alias="menuVo"/>
+		<typeAlias type="gos.vo.NoticeBoardVO" alias="noticeboardVo"/>
+		<typeAlias type="gos.vo.ReservationVO" alias="reservationVo"/>
+		<typeAlias type="gos.vo.RestautantVO" alias="restaurantVo"/>
+		<typeAlias type="gos.vo.ReviewVO" alias="reviewVo"/>
+		<typeAlias type="gos.vo.RsMenuVO" alias="rsmenuVo"/>
+		<typeAlias type="gos.vo.RstcmtVO" alias="rstcmtVo"/>
+		<typeAlias type="gos.vo.RsttagVO" alias="rsttagVo"/>
+		<typeAlias type="gos.vo.RvrepotVO" alias="rvreportVo"/>
+		<typeAlias type="gos.vo.TableTypeVO" alias="tabletypeVo"/>
+		<typeAlias type="gos.vo.TagVO" alias="tagVo"/>
 	</typeAliases>
 	
 	<!-- DB연결 설정하기 -->
