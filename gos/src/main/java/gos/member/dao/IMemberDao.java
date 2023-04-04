@@ -1,5 +1,7 @@
 package gos.member.dao;
 
-public class IMemberDao {
+import java.util.List;
 
+public class IMemberDao {
+	
 }
