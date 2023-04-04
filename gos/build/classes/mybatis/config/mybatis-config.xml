@@ -16,7 +16,23 @@
 	
 	<!-- typeAlias 설정하기 -->
 	<typeAliases>
-		
+		<typeAlias type="gos.vo.BookmarkVO" alias="bookmarkVo"/>
+		<typeAlias type="gos.vo.CategoryVO" alias="categoryVo"/>
+		<typeAlias type="gos.vo.CmtReportVO" alias="cm"/>
+		<typeAlias type="gos.vo.CmtVO" alias=""/>
+		<typeAlias type="gos.vo.IqrVO" alias=""/>
+		<typeAlias type="gos.vo.MemberVO" alias=""/>
+		<typeAlias type="gos.vo.MenuVO" alias=""/>
+		<typeAlias type="gos.vo.NoticeBoardVO" alias=""/>
+		<typeAlias type="gos.vo.ReservationVO" alias=""/>
+		<typeAlias type="gos.vo.RestautantVO" alias=""/>
+		<typeAlias type="gos.vo.ReviewVO" alias=""/>
+		<typeAlias type="gos.vo.RsMenuVO" alias=""/>
+		<typeAlias type="gos.vo.RstcmtVO" alias=""/>
+		<typeAlias type="gos.vo.RsttagVO" alias=""/>
+		<typeAlias type="gos.vo.RvrepotVO" alias=""/>
+		<typeAlias type="gos.vo.TableTypeVO" alias=""/>
+		<typeAlias type="gos.vo.TagVO" alias=""/>
 	</typeAliases>
 	
 	<!-- DB연결 설정하기 -->
