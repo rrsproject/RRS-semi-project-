@@ -1,6 +1,6 @@
 package gos.vo;
 
-public class TagVO {
+public class TagVO { //kyw
 	private String tag_id;
 	private String tag_name;
 	public String getTag_id() {
