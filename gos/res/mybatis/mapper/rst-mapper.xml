@@ -146,6 +146,23 @@
 				#{rst_id},
 				#{RV_ID})	  
     </insert>
+<<<<<<< HEAD
+=======
+    
+    <!-- 예약 조회 -->
+    <select id="searchReservation" parameterType="String" resultType="ReservationVO"></select>
+    select * 
+    from reservation 
+    where rs_id = #{rs_id}
+	
+	<!--예약 삭제-->  
+	<delete id="delReservation" parameterType="String">
+		delete 
+		from reservation 
+		where rs_id = #{rs_id}
+	</delete>
+
+>>>>>>> rst-develop
 </mapper>
 
 
