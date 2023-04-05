@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="reservation">
+    
+    <!-- 예약정보 insert -->
+	<insert id="insertrsv" parameterType="reservationVo">
+		insert into RESERVATION(RS_ID, RS_PEOPLE, RS_DATETIME, MEM_ID, TT_ID, RST_ID)
+		values (sysdate, #{rs_people}, #{rs_datetime}, #{mem_id}, #{tt_id}, #{rst_id})
+	</insert>
+	
+	<!-- 예약메뉴 insert -->
+	<insert id="insertrsvmenu" parameterType="rsmenuVo">
+		insert into RSMENU(RM_ID, MENU_ID, RST_ID, RM_QTY, RS_ID)
+		values (#{rm_id}, #{menu_id}, #{rst_id}, #{rm_qty}, #{rs_id})
+	</insert>
+	
+	<!-- 수용인원 빼기 -->
+	
+</mapper>
