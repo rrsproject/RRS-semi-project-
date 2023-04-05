@@ -10,7 +10,18 @@ import gos.vo.NoticeBoardVO;
 import gos.vo.RestautantVO;
 
 public class AdminDaoImpl implements IAdminDao{
-
+	
+	private static AdminDaoImpl dao;
+	
+	private AdminDaoImpl() {
+		
+	}
+	
+	public static AdminDaoImpl getInstance() {
+		if(dao==null) dao = new AdminDaoImpl();
+		return dao;
+	}
+	
 	
 	//-------사업자 승인 페이지 ------------------ 
 	
