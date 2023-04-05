@@ -76,7 +76,7 @@
 	</select>
 	
 	<!-- 공지사항 삭제 -->
-	<delete id="signupDelete" parameterType="int">
+	<delete id="noticeboardDelete" parameterType="int">
 		delete from noticeboard where nb_id = #{nb_id}
 	</delete>
 	

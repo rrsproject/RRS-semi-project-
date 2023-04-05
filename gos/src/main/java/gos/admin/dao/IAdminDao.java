@@ -101,7 +101,7 @@ public interface IAdminDao {
 	 * 공지사항 삭제
 	 * @return 성공1 실패0
 	 */
-	public int signupDelete(int nb_id);
+	public int noticeboardDelete(int nb_id);
 	
 	
 	// 공지사항 수정자리

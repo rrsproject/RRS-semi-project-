@@ -230,7 +230,7 @@ public class AdminDaoImpl implements IAdminDao{
 	
 	// 공지사항 삭제
 	@Override
-	public int signupDelete(int nb_id) {
+	public int noticeboardDelete(int nb_id) {
 		
 		SqlSession session = null;
 		int cnt =0;

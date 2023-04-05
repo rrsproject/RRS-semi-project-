@@ -87,8 +87,8 @@ public class AdminServiceImpl implements IAdminService {
 	}
 
 	@Override
-	public int signupDelete(int nb_id) {
-		return dao.signupDelete(nb_id);
+	public int noticeboardDelete(int nb_id) {
+		return dao.noticeboardDelete(nb_id);
 	}
 
 }
