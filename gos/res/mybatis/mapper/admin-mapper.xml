@@ -13,6 +13,7 @@
     	select rst_id, rst_name, rst_req from restaurant where accept is null
     </select>
 	
+	
 	<!-- 결재관리버튼(승인) -->
 	<update id="signupApproval" parameterType="String">
 		restaurant set accept=sysdate where rst_id =#{rst_id}

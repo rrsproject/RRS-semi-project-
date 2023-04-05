@@ -1,5 +1,7 @@
 package gos.admin.dao;
 
+import java.util.List;
+
 import gos.vo.MemberVO;
 import gos.vo.NoticeBoardVO;
 import gos.vo.RestautantVO;
@@ -9,9 +11,9 @@ public interface IAdminDao {
 	
 	/**
 	 * 사업자 정보조회(승인대기)
-	 * @return RestautantVO
+	 * @return List<RestautantVO>
 	 */
-	public RestautantVO waitApproval();
+	public List<RestautantVO> waitApproval();
 	
 	/**
 	 * 결재관리버튼(승인)
@@ -38,7 +40,7 @@ public interface IAdminDao {
 	 * 사업자 정보 조회 전체
 	 * @return RestautantVO
 	 */
-	public RestautantVO restaurantInfo();
+	public List<RestautantVO> restaurantInfo();
 
 	/**
 	 * 회원관리 페이지
@@ -53,7 +55,7 @@ public interface IAdminDao {
 	 * 회원 전체 정보 조회
 	 * @return RestautantVO
 	 */
-	public MemberVO memberInfo();
+	public List<MemberVO> memberInfo();
 	
 	
 	/**
@@ -77,7 +79,7 @@ public interface IAdminDao {
 	 * 게시판 전체 조회
 	 * @return RestautantVO
 	 */
-	public NoticeBoardVO noticeBoardInfo();
+	public List<NoticeBoardVO> noticeBoardInfo();
 	
 	
 	/**

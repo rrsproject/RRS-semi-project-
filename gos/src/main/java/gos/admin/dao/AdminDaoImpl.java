@@ -1,5 +1,7 @@
 package gos.admin.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import gos.util.MybatisSqlSessionFactory;
@@ -14,21 +16,21 @@ public class AdminDaoImpl implements IAdminDao{
 	
 	// 사업자 정보조회(승인대기)
 	@Override
-	public RestautantVO waitApproval() {
+	public List<RestautantVO> waitApproval() {
 		
-		RestautantVO vo = null;
+		List<RestautantVO> restList = null;
 		
 		SqlSession session = null;
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			restList = session.selectList("admin.waitApproval");
 			
 		} finally {
-			// TODO: handle finally clause
+			session.close();
 		}
 		
-		return vo;
+		return restList;
 	}
 	
 	// 결재관리버튼(승인)
@@ -40,30 +42,31 @@ public class AdminDaoImpl implements IAdminDao{
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			cnt = session.update("admin.signupApproval",res_id);
 			
 		} finally {
-			// TODO: handle finally clause
+			session.close();		
 		}		
 		
-		return 0;
+		return cnt;
 	}
 
 	// 결재관리버튼(삭제)
 	@Override
 	public int signupDelete(String res_id) {
+		
 		SqlSession session = null;
 		int cnt =0;
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			cnt = session.delete("admin.signupDelete", res_id);
 			
 		} finally {
-			// TODO: handle finally clause
+			session.close();
 		}		
 		
-		return 0;
+		return cnt;
 	}
 	
 	
@@ -71,21 +74,21 @@ public class AdminDaoImpl implements IAdminDao{
 	//--------- 회원관리----------------------
 	// 사업자 정보 조회 (관리자)
 	@Override
-	public RestautantVO restaurantInfo() {
+	public List<RestautantVO> restaurantInfo() {
 
-		RestautantVO vo = null;
+		List<RestautantVO> restList = null;
 		
 		SqlSession session = null;
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			restList = session.selectList("admin.restaurantInfo");
 			
 		} finally {
 			// TODO: handle finally clause
 		}
 		
-		return vo;
+		return restList;
 	}
 
 	// 사업자 상세 조회
@@ -109,17 +112,42 @@ public class AdminDaoImpl implements IAdminDao{
 
 	// 멤버 조회
 	@Override
-	public MemberVO memberInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<MemberVO> memberInfo() {
+		
+		List<MemberVO> vo = null;
+		
+		SqlSession session = null;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			
+			
+		} finally {
+			// TODO: handle finally clause
+		}
+		
+		return vo;
 	}
+
 
 	
 	// 멤버 상세조회
 	@Override
 	public MemberVO memberDetail(String mem_id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		MemberVO vo = null;
+		
+		SqlSession session = null;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			
+			
+		} finally {
+			// TODO: handle finally clause
+		}
+		
+		return vo;
 	}
 
 	
@@ -136,21 +164,45 @@ public class AdminDaoImpl implements IAdminDao{
 	
 	// 공지사항 전체 조회
 	@Override
-	public NoticeBoardVO noticeBoardInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<NoticeBoardVO> noticeBoardInfo() {
+		
+		List<NoticeBoardVO> vo =null;
+		SqlSession session = null;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			
+			
+		} finally {
+			// TODO: handle finally clause
+		}
+		
+		return vo;
 	}
+	
 
 	//선택한 공지사항 조회
 	@Override
 	public NoticeBoardVO noticeBoardDetail(int nb_id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		NoticeBoardVO vo =null;
+		SqlSession session = null;
+
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			
+			
+		} finally {
+			// TODO: handle finally clause
+		}
+		
+		return vo;
 	}
 	
 	//공지사항 입력
 	@Override
 	public int noticeBoardWrite(NoticeBoardVO vo) {
+		
 		SqlSession session = null;
 		int cnt =0;
 		
@@ -162,14 +214,25 @@ public class AdminDaoImpl implements IAdminDao{
 			// TODO: handle finally clause
 		}		
 		
-		return 0;
+		return cnt;
 	}
 	
 	// 공지사항 삭제
 	@Override
 	public NoticeBoardVO signupDelete(int nb_id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		SqlSession session = null;
+		NoticeBoardVO vo = null;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			
+			
+		} finally {
+			// TODO: handle finally clause
+		}		
+		
+		return vo;
 	}
 	
 	// 공지사항 수정자리
