@@ -101,7 +101,7 @@ public class AdminDaoImpl implements IAdminDao{
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			vo = session.selectOne("admin.restaurantDetail",rst_id);
 			
 		} finally {
 			// TODO: handle finally clause
@@ -114,19 +114,19 @@ public class AdminDaoImpl implements IAdminDao{
 	@Override
 	public List<MemberVO> memberInfo() {
 		
-		List<MemberVO> vo = null;
+		List<MemberVO> memList = null;
 		
 		SqlSession session = null;
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			memList = session.selectList("admin.memberInfo");
 			
 		} finally {
 			// TODO: handle finally clause
 		}
 		
-		return vo;
+		return memList;
 	}
 
 
@@ -141,7 +141,7 @@ public class AdminDaoImpl implements IAdminDao{
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			vo = session.selectOne("admin.memberDetail", mem_id);
 			
 		} finally {
 			// TODO: handle finally clause
@@ -166,18 +166,18 @@ public class AdminDaoImpl implements IAdminDao{
 	@Override
 	public List<NoticeBoardVO> noticeBoardInfo() {
 		
-		List<NoticeBoardVO> vo =null;
+		List<NoticeBoardVO> nbBoardList =null;
 		SqlSession session = null;
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			nbBoardList = session.selectList("admin.noticeBoardInfo");
 			
 		} finally {
 			// TODO: handle finally clause
 		}
 		
-		return vo;
+		return nbBoardList;
 	}
 	
 
@@ -193,11 +193,11 @@ public class AdminDaoImpl implements IAdminDao{
 			
 			
 		} finally {
-			// TODO: handle finally clause
+			vo = session.selectOne("admin.noticeBoardDetail");		
 		}
-		
 		return vo;
 	}
+	
 	
 	//공지사항 입력
 	@Override
@@ -208,7 +208,7 @@ public class AdminDaoImpl implements IAdminDao{
 		
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			cnt = session.insert("admin.noticeBoardWrite", vo);
 			
 		} finally {
 			// TODO: handle finally clause
@@ -219,20 +219,20 @@ public class AdminDaoImpl implements IAdminDao{
 	
 	// 공지사항 삭제
 	@Override
-	public NoticeBoardVO signupDelete(int nb_id) {
+	public int signupDelete(int nb_id) {
 		
 		SqlSession session = null;
-		NoticeBoardVO vo = null;
-		
+		int cnt =0;
+
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
+			cnt = session.delete("signupDelete", nb_id);
 			
 		} finally {
 			// TODO: handle finally clause
 		}		
 		
-		return vo;
+		return cnt;
 	}
 	
 	// 공지사항 수정자리
