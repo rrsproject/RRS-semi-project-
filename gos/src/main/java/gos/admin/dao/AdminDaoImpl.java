@@ -38,6 +38,7 @@ public class AdminDaoImpl implements IAdminDao{
 			restList = session.selectList("admin.waitApproval");
 			
 		} finally {
+			session.commit();
 			session.close();
 		}
 		
@@ -56,6 +57,7 @@ public class AdminDaoImpl implements IAdminDao{
 			cnt = session.update("admin.signupApproval",res_id);
 			
 		} finally {
+			session.commit();
 			session.close();		
 		}		
 		
@@ -74,6 +76,7 @@ public class AdminDaoImpl implements IAdminDao{
 			cnt = session.delete("admin.signupDelete", res_id);
 			
 		} finally {
+			session.commit();
 			session.close();
 		}		
 		
@@ -96,7 +99,8 @@ public class AdminDaoImpl implements IAdminDao{
 			restList = session.selectList("admin.restaurantInfo");
 			
 		} finally {
-			// TODO: handle finally clause
+			session.commit();
+			session.close();
 		}
 		
 		return restList;
@@ -115,7 +119,8 @@ public class AdminDaoImpl implements IAdminDao{
 			vo = session.selectOne("admin.restaurantDetail",rst_id);
 			
 		} finally {
-			// TODO: handle finally clause
+			session.commit();
+			session.close();
 		}
 		
 		return vo;
@@ -134,7 +139,8 @@ public class AdminDaoImpl implements IAdminDao{
 			memList = session.selectList("admin.memberInfo");
 			
 		} finally {
-			// TODO: handle finally clause
+			session.commit();
+			session.close();
 		}
 		
 		return memList;
@@ -155,7 +161,8 @@ public class AdminDaoImpl implements IAdminDao{
 			vo = session.selectOne("admin.memberDetail", mem_id);
 			
 		} finally {
-			// TODO: handle finally clause
+			session.commit();
+			session.close();
 		}
 		
 		return vo;
@@ -185,7 +192,8 @@ public class AdminDaoImpl implements IAdminDao{
 			nbBoardList = session.selectList("admin.noticeBoardInfo");
 			
 		} finally {
-			// TODO: handle finally clause
+			session.commit();
+			session.close();
 		}
 		
 		return nbBoardList;
@@ -201,10 +209,10 @@ public class AdminDaoImpl implements IAdminDao{
 
 		try {
 			session = MybatisSqlSessionFactory.getSqlSession();
-			
-			
+			vo = session.selectOne("admin.noticeBoardDetail");				
 		} finally {
-			vo = session.selectOne("admin.noticeBoardDetail");		
+			session.commit();
+			session.close();
 		}
 		return vo;
 	}
@@ -222,7 +230,8 @@ public class AdminDaoImpl implements IAdminDao{
 			cnt = session.insert("admin.noticeBoardWrite", vo);
 			
 		} finally {
-			// TODO: handle finally clause
+			session.commit();
+			session.close();
 		}		
 		
 		return cnt;
@@ -240,7 +249,8 @@ public class AdminDaoImpl implements IAdminDao{
 			cnt = session.delete("signupDelete", nb_id);
 			
 		} finally {
-			// TODO: handle finally clause
+			session.commit();
+			session.close();
 		}		
 		
 		return cnt;

@@ -16,12 +16,12 @@
 	
 	<!-- 결재관리버튼(승인) -->
 	<update id="signupApproval" parameterType="String">
-		restaurant set accept=sysdate where rst_id =#{rst_id}
+    	update restaurant set accept = sysdate where rst_id = #{rst_id}
 	</update>
 	
 	<!-- 결재관리버튼(삭제) -->
 	<delete id="signupDelete" parameterType="String">
-		delete from RESTAURANT where RST_ID = #{rst_id}
+		delete from restaurant where rst_id = #{rst_id}
 	</delete>
 	
 	
@@ -36,7 +36,7 @@
 	<!-- 사업자 상세 조회-->
 	<select id="restaurantDetail" resultType="restaurantVo" parameterType="String">
 		select b.*,
-			(select ctg_name from category a where a.CTG_ID = b.CTG_ID) 
+			(select ctg_name from category a where a.CTG_ID = b.CTG_ID)
 		from RESTAURANT b where RST_ID=#{rst_id}
 	</select>
 	

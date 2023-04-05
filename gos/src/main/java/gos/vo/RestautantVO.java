@@ -16,6 +16,8 @@ public class RestautantVO {
 	private String accept;
 	private String ctg_id;
 	private String rst_req;
+	
+	
 
 	public String getRst_req() {
 		return rst_req;
